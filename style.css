@@ -526,8 +526,8 @@ section {
 }
 
 .banner {
-  background: -webkit-gradient(linear, left top, left bottom, from(rgba(17, 17, 17, 0.7)), to(rgba(17, 17, 17, 0.7))), url(../banner-bg.jpg) no-repeat;
-  background: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.7)), url(../banner-bg.jpg) no-repeat;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(17, 17, 17, 0.7)), to(rgba(17, 17, 17, 0.7))), url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPSVJS6TGcDSpbLnnOA-6lijiVq-l8DrETk0SRiPuh1R0g5uCRacCfRwkjNVeF98Zb1rRwgn7cFMQiPLmspFs39Le85Gj9_Y5VEz2IDEa-PqMgqiGHxqWFpNZB8oQeyEiQAiuZm2xD27jNL9eK2rkqw4DifmfdrPF2sfp8dDbv4AOt3lP4TE4lDGXt7sg/s1880/banner-bg.jpg) no-repeat;
+  background: linear-gradient(rgba(17, 17, 17, 0.7), rgba(17, 17, 17, 0.7)), url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjPSVJS6TGcDSpbLnnOA-6lijiVq-l8DrETk0SRiPuh1R0g5uCRacCfRwkjNVeF98Zb1rRwgn7cFMQiPLmspFs39Le85Gj9_Y5VEz2IDEa-PqMgqiGHxqWFpNZB8oQeyEiQAiuZm2xD27jNL9eK2rkqw4DifmfdrPF2sfp8dDbv4AOt3lP4TE4lDGXt7sg/s1880/banner-bg.jpg) no-repeat;
   background-size: cover;
   background-position: center;
   padding: 3rem 2rem;
