@@ -135,36 +135,56 @@
 
     <!-- home section ends -->
 
-    <!-- booking form section starts  -->
+<!-- booking form section starts -->
 
-    <section class="book-form" id="book-form">
-
-        <form action="">
-            <div data-aos="zoom-in" data-aos-delay="150" class="inputBox">
-                <span>Rooms</span>
-                <input type="text" placeholder="No. of Rooms" value="">
-            </div>
-            <div data-aos="zoom-in" data-aos-delay="300" class="inputBox">
-                <span>Check in Date ?</span>
-                <input type="date" value="">
-            </div>
-            <div data-aos="zoom-in" data-aos-delay="300" class="inputBox">
-                <span>Check out Date ?</span>
-                <input type="date" value="">
-            </div>
-            <div data-aos="zoom-in" data-aos-delay="450" class="inputBox">
-                <span>Total Adults?</span>
-                <input type="number" placeholder="number of adults" value="">
-            </div>
+<section class="book-form" id="book-form">
+    <form id="bookingForm">
+        <div data-aos="zoom-in" data-aos-delay="150" class="inputBox">
+            <span>Rooms</span>
+            <input type="text" id="rooms" placeholder="No. of Rooms" required>
         </div>
-        <a href="mailto:jaabalhomestay@gmail.com?subject=Booking%20Inquiry" data-aos="zoom-in" data-aos-delay="600" class="btn">
-            <center> Book Now</center>
-         </a>
-        </form>
+        <div data-aos="zoom-in" data-aos-delay="300" class="inputBox">
+            <span>Check-in Date?</span>
+            <input type="date" id="checkin" required>
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="300" class="inputBox">
+            <span>Check-out Date?</span>
+            <input type="date" id="checkout" required>
+        </div>
+        <div data-aos="zoom-in" data-aos-delay="450" class="inputBox">
+            <span>Total Adults?</span>
+            <input type="number" id="adults" placeholder="Number of Adults" required>
+        </div>
+        <button type="button" onclick="sendToWhatsApp()" data-aos="zoom-in" data-aos-delay="600" class="btn">
+            <center>Book Now</center>
+        </button>
+    </form>
+</section>
 
-    </section>
+<!-- booking form section ends -->
 
-    <!-- booking form section ends -->
+<script>
+    function sendToWhatsApp() {
+        const rooms = document.getElementById('rooms').value;
+        const checkin = document.getElementById('checkin').value;
+        const checkout = document.getElementById('checkout').value;
+        const adults = document.getElementById('adults').value;
+
+        if (rooms && checkin && checkout && adults) {
+            const message = `Hello, I would like to book a room with the following details:
+- No. of Rooms: ${rooms}
+- Check-in Date: ${checkin}
+- Check-out Date: ${checkout}
+- Total Adults: ${adults}`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/918851355966?text=${encodedMessage}`;
+            window.open(whatsappUrl, '_blank');
+        } else {
+            alert('Please fill in all the details!');
+        }
+    }
+</script>
+
 
     <!-- about section starts  -->
 
@@ -736,7 +756,7 @@
         <div class="box-container">
 
             <div class="box" data-aos="fade-up" data-aos-delay="150">
-                <a href="#" class="logo"> <span>J</span>aabbal <span>H</span>omestay </a>
+                <a href="#" class="logo"> <span>J</span>aabal <span>H</span>omestay </a>
                 <p>Enjoy diverse food and drinks with local flavors and international cuisines, catering to all dietary needs for a memorable culinary journey</p>
                 <div class="share">
                     <a href="https://www.facebook.com/amitjabal?mibextid=ZbWKwL" class="fab fa-facebook-f"></a>
