@@ -134,7 +134,6 @@
     </section>
 
     <!-- home section ends -->
-
 <!-- booking form section starts -->
 
 <section class="book-form" id="book-form">
@@ -165,25 +164,37 @@
 
 <script>
     function sendToWhatsApp() {
-        const rooms = document.getElementById('rooms').value;
-        const checkin = document.getElementById('checkin').value;
-        const checkout = document.getElementById('checkout').value;
-        const adults = document.getElementById('adults').value;
+        // Fetch the input values
+        const rooms = document.getElementById('rooms').value.trim();
+        const checkin = document.getElementById('checkin').value.trim();
+        const checkout = document.getElementById('checkout').value.trim();
+        const adults = document.getElementById('adults').value.trim();
 
+        // Check if all fields are filled
         if (rooms && checkin && checkout && adults) {
-            const message = `Hello, I would like to book a room with the following details:
-- No. of Rooms: ${rooms}
+            // Construct the message
+            const message = `
+Hello, I would like to book a room with the following details:
+- Number of Rooms: ${rooms}
 - Check-in Date: ${checkin}
 - Check-out Date: ${checkout}
 - Total Adults: ${adults}`;
+
+            // Encode the message for URL
             const encodedMessage = encodeURIComponent(message);
+
+            // WhatsApp redirect URL
             const whatsappUrl = `https://wa.me/918851355966?text=${encodedMessage}`;
+
+            // Open WhatsApp with the pre-filled message
             window.open(whatsappUrl, '_blank');
         } else {
-            alert('Please fill in all the details!');
+            // Alert the user if any field is empty
+            alert('Please fill in all the details before booking!');
         }
     }
 </script>
+
 
 
     <!-- about section starts  -->
@@ -229,13 +240,13 @@
 
         <div class="box-container">
 
-            
-
-            <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
-                <i class="fas fa-hiking"></i>
-                <h3>Adventure</h3>
-                <p>Tirthan Valley, located in the Kullu district of Himachal Pradesh, India, is a serene and picturesque destination ideal for trekking enthusiasts and nature lovers.</p>
+            <div class="box" data-aos="zoom-in-up" data-aos-delay="600">
+                <i class="fas fa-hotel"></i>
+                <h3>riverside homestay</h3>
+                <p>Our Homestay is River-touch property in Tirthan Valley which is beside Tirthan River.</p>
             </div>
+
+            
 
             <div class="box" data-aos="zoom-in-up" data-aos-delay="450">
                 <i class="fas fa-utensils"></i>
@@ -243,10 +254,10 @@
                 <p>We have the in- house Restaurant for our Guest. We served freshly cooked food.</p>
             </div>
 
-            <div class="box" data-aos="zoom-in-up" data-aos-delay="600">
-                <i class="fas fa-hotel"></i>
-                <h3>riverside homestay</h3>
-                <p>Our Homestay is River-touch property in Tirthan Valley which is beside Tirthan River.</p>
+            <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
+                <i class="fas fa-hiking"></i>
+                <h3>Adventure</h3>
+                <p>You can trek to some of the famous trails like, Great himalyan National Park, Chhoie waterfall, Sirloskar lake and Raghupur Fort.</p>
             </div>
 
             
@@ -292,7 +303,7 @@
                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg6d35_ByNlJ3JzgTuo4Npnk5vosuR0VzCXgj6s2lpdLKckYhHmy5svVi-v1hSiOQr7yMLqw9h29BHHbQeY6MNXM8mOnesvrr7XJjJjwyJT4aUzhKmqTH-fJT57FpvEtS_3D9mYtjd0Y0hnc_RlLhof06n1327vHEmgC-LNBAIBeGaVmRzyiHttpHpF_f5D/s320/IMG-20241103-WA0051.jpg" alt="">
             </div>
             <div class="content">
-                <p>Duplex Room</p>
+                <p>Duplex Room with valley view</p>
                 <a href="#book-form">book now <i class="fas fa-angle-right"></i></a>
             </div>
         </div>
@@ -301,7 +312,7 @@
                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiPSjNSwL-ME2qo_tRqf6OC8g6ka9hj8emUnBl7JqhR7UP3s3h0D1g_fDbHi7GynCUXDu_DdZTT0YDWuyov9l98is3AH3oUhIBWXtc2R45acbEMwdHkBUIM-gAHHxNM5_Ye1js0x11MgpSjXG6lkdKtMD7fe3lzbw8FkNvwtt_VXYtQO1qnHiIOOHF7Wamy/s320/IMG-20241103-WA0052.jpg" alt="">
             </div>
             <div class="content">
-                <p>Deluxe Room with Balcony</p>
+                <p>Deluxe Room with river view</p>
                 <a href="#book-form">book now <i class="fas fa-angle-right"></i></a>
             </div>
         </div>
@@ -310,8 +321,8 @@
                 <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgzxp26QjH0czO0OOFRaUGozzljG_TsMwDowzzvedMnGEOq1p0af8fY8GPF_iXfItRCPbCon5ATT1I6Dn3em0cQFVzydWYXzTpug2dh6agUdYco6Jb9Y3rVmpc3zTBU_X37pK0eJE9hg5Ac6ZPAXb1qCUsFm4FWuwZfuM575f3WFPgJtsgdFwveBuVaP7kl/s320/IMG-20241103-WA0054.jpg" alt="">
             </div>
             <div class="content">
-                <p>Deluxe Room without balcony</p>
-                <a href="#book-form">book now <i class="fas fa-angle-right"></i></a>
+                <p>Riverside Garden</p>
+                
             </div>
         </div>
         <div class="box" data-aos="fade-up" data-aos-delay="300">
@@ -324,7 +335,15 @@
             </div>
         </div>
         
-       
+        <div class="box" data-aos="fade-up" data-aos-delay="300">
+            <div class="image">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgCGjEmIgGUD0nL3_DIXYyy_tF3gyZDW6O9GBJLfJ7ZVMYbiNhH07ztWkvKq8qw5qvyoKrjPAZDde-MafQZRiaSm-SS_d7jFvwF2_G2Gec_iFyUEaohxMgDsd1ty_K7S6iPMA-5u3UoCbGyUsYuUCbg9cjaz8YcE5poGQRb4U5BDrVtuVL7P1X1LRDtnqAm/s320/IMG-20241103-WA0055.jpg" alt="">
+            </div>
+            <div class="content">
+                <p>Bonfire area</p>
+                
+            </div>
+        </div>
             
         
 
@@ -612,64 +631,55 @@
 
 
 
-    <!-- gallery section starts  -->
+<!-- gallery section starts  -->
 
-    <section class="gallery" id="gallery">
+<section class="gallery" id="gallery">
+    <div class="heading">
+        <span>our gallery</span>
+        <h1>Memories last forever</h1>
+    </div>
 
-        <div class="heading">
-            <span>our gallery</span>
-            <h1>Memories last forever</h1>
+    <div class="box-container">
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjZ4YVluo4Y-Sd-wzgFf3EvcmQal3TkXt6Qy2W5G11eWYIYWOjJ2hovOh3bAcuKiI0ii3H6b2eI7eRVF9E9UI1P4_bJfcNuGRYLhjCj-fY_tMT19-x0UJqoba1XnGM4AHdVruPtFuB1S8cgCksq1n5iK-oWOF8ENN6KYnstMuw3Hbe9Fk3tx6XeT3uUbV0/s320/WhatsApp%20Image%202024-11-28%20at%2020.29.14_9f64a717.jpg" alt="">
         </div>
 
-        <div class="box-container">
-
-            <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
-                <img src="https://scontent.fccu27-1.fna.fbcdn.net/v/t1.6435-9/151308604_1653818374806392_2541757388516903065_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=127cfc&_nc_ohc=TGg8IUhjqRYQ7kNvgFytlyu&_nc_zt=23&_nc_ht=scontent.fccu27-1.fna&_nc_gid=APtlX9CDBNyZCBQifqnZdMy&oh=00_AYAiT492JX_q0XDViGbsotOEofr8wqaeXOwtiKm2trLmkA&oe=675066AD" alt="">
-                <span>travel spot</span>
-                <h3>Chhoie waterfall</h3>
-            </div>
-
-            <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
-                <img src="https://res.cloudinary.com/roundglass/image/upload/f_auto/ar_16:9,c_fill,w_auto/g_auto,q_auto/v1594616671/roundglass/sustain/great-himalayan-national-park-sainj-habitat-medicinal-herb-dhritiman-mukherjee_qp1uaq.jpg" alt="">
-                <span>travel spot</span>
-                <h3>Great Himalayan National park</h3>
-            </div>
-
-            
-
-            <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
-                <img src="https://i.ytimg.com/vi/N8gKdpI3RxE/maxresdefault.jpg" alt="">
-                <span>travel spot</span>
-                <h3>Bathad Waterfall</h3>
-            </div>
-
-            <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
-                <img src="https://i0.wp.com/travelshoebum.com/wp-content/uploads/2020/04/DSC_8954.jpg?resize=1200%2C1812&ssl=1" alt="">
-                <span>travel spot</span>
-                <h3>Sharchi Village</h3>
-            </div>
-
-            
-
-            <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
-                <img src="https://www.holidify.com/images/compressed/712.jpg" alt="">
-                <span>travel spot</span>
-                <h3>Jalori Pass</h3>
-            </div>
-
-            <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
-                <img src="https://res.cloudinary.com/chasset/c_fill,e_improve,f_webp,h_480,w_720/hbimages/desktop/1715584517129-Jalori-Pass-Raghupur-Fort-Trek-Kullu-Himachal-Pradesh.jpg" alt="">
-                <span>travel spot</span>
-                <h3>Raghupur Fort</h3>
-            </div>
-
-            
-
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgeAV-0dRMPBVj42ppxpDUYLzD5ueOoIWNgmUNenargKybqvbPorcbFuJUHomKS8_yGAB7Vt5dxz8u7u1E6KBDUv2cMNlQJOIbxE7y4SEfDxDhb4DRnEoq9PT43OFISkC9Y7zHJEAtaEehcg7OovcSfj0HNEbsuTrdA43hkl-cD0vKz949AEXWwOCFyOUw/s320/WhatsApp%20Image%202024-11-28%20at%2020.29.14_70d44bfe.jpg" alt="">
         </div>
 
-    </section>
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh_w8qJifIGphCQ-8dI29cLHWRE38OV33G0EhHwyFvYIyVj4T7j5cD8ZRqBcxnZCr1XQo7U4fperZoLdz-JFyBBQfuewrJVKoK4FqJkQgqCXjGeABOSk8yAr4SCL0v8LXmYuovEitPKYHG40ubefGol9Gxk29ja5Jz6H8MSk6fHMFygHEngttccIXN-vCY/s320/WhatsApp%20Image%202024-11-28%20at%2020.31.50_583ad70e.jpg" alt="">
+        </div>
 
-    <!-- gallery section ends -->
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgnVbieIVeryUhVMlMbCzcoI_9pc4-YEB5PWu9aElScgjJMX4kpICwhJYwWxcxOZC6fLBATSXFPfFe32cbz-Q0qWSPxy_DPTSWR7uNQ9XIdLTCpJy1-fjAFZeMYei3L2xeqv997S40uzlVsCc7omb7ADkQPQVshBC2nCL9nlU97S7AcodK8z7h0MtfDHlQ/s320/WhatsApp%20Image%202024-11-28%20at%2020.29.14_ba2f3e6e.jpg" alt="">
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="150">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhBfwN8NtEDOx5BcycAnhki2ViUOhAv_Hc0E7mmQzqP6ooi4VNLCJSKXw8JqrGp1ya7SVfhZZgZEJDbaOS8psLAm1-7Q-xYfcFvi2JhrqNzoSjKBEAO9hSd1Dft0FK1WpzCyZzX_xjZk8B_pMWBJ1TEGxFsGmOMSN3pev812H8YObJlvaqZGZIQahFgr8Q/s320/WhatsApp%20Image%202024-11-28%20at%2020.31.34_3d0f3d43.jpg" alt="">
+        </div>
+
+        <div class="box" data-aos="zoom-in-up" data-aos-delay="300">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgl1UjpXFtMlhHFAwyr4YRQ8dO2c7VQKsjAow2pNu7Yed8Dkn9CeyC6QagBX_ltOgJIAm5p1Ml6rJ1C4Qegc2LFatMernHjKU5_tbjxjwuot5wGBTR73ZbTydGXbMVK_vNo2eqLB39yw_n1CmMJSSdNO7f6oTJD4cCA2N-srDpbU_OJBxqz6oxdLLJrab0/s320/WhatsApp%20Image%202024-11-28%20at%2020.29.15_60f78d98.jpg" alt="">
+        </div>
+    </div>
+
+</section>
+
+<!-- gallery section ends -->
+
+<!-- Add this CSS to style the images -->
+
+<style>
+    .box img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+</style>
+
 
     <!-- review section starts  -->
 
@@ -784,7 +794,7 @@
 
             <div class="box" data-aos="fade-up" data-aos-delay="450">
                 <h3>contact info</h3>
-                <p> <i class="fas fa-map"></i> Himachal Pradesh, india </p>
+                <p> <i class="fas fa-map"></i> C/O Amit Thakur (Rinku), Village Jawal, PO Ghahidhar, (Tirthan Valley), Tehsil Banjar, Distt Kullu, HP 175123. </p>
                 <p> <i class="fas fa-phone"></i> +91 85805 07979 </p>
                 <p> <i class="fas fa-envelope"></i> jaabalhomestay@gmail.com </p>
                 <p> <i class="fas fa-clock"></i> 7:00am - 10:00pm </p>
